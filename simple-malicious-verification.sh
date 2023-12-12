@@ -66,7 +66,7 @@ fi
 
 BashHistory=$(sudo find / -name ".bash_history" 2>/dev/null)
 
-printf "\n$YELLOW[*]$WHITE Finding UponKit tries"
+printf "\n$YELLOW[*]$WHITE Finding UponKit tries\n"
 
 for i in $BashHistory
 do
@@ -85,7 +85,7 @@ printf "$YELLOW[*]$WHITE Search for common privillege scalation commands in $YEL
 for i in $BashHistory
 do
         printf "$YELLOW"
-        cat $BashHistory | grep -E 'pwned|crackmapexec|nmap|fscan|rootkit|heroin|trojan|nc -lvnp|nc -lnvp|worm|python|ruby|sudo su -l|whoami|wget|whoami|kit|upon|uponkit|dbus-send|sudo -u#-1 /bin/bash|find / -perm -u=s -type f 2>/dev/null|WafW00f|ssh|hydra'
+        cat $BashHistory | grep -E 'pwned|crackmapexec|nmap|fscan|rootkit|heroin|trojan|nc -lvnp|nc -lnvp|worm|python|ruby|sudo su -l|whoami|wget|whoami|kit|upon|uponkit|dbus-send|sudo -u#-1 /bin/bash|find / -perm -u=s -type f 2>/dev/null|WafW00f|ssh|hydra' | sort -u
         printf "$WHITE[!] $i $BGREEN CHECKED\n$WHITE"
 done
 
@@ -96,6 +96,11 @@ printf "$YELLOW[*]$WHITE Search for suspect files.\n$YELLOW"
 
 find / -name "linpeas" -o -name "linenum" -o -name "winpeas" 2>/dev/null
 find / -name "uponkit" -o -name "upon" -o -name "rootkit" 2>/dev/null
-find / -name "pwned" -o -name "hack" -o -name "hacked" 2>/dev/null
+find / -name "pwned" -o -name "hacker" -o -name "hacked" 2>/dev/null
+
+
+printf "$YELLOW[*]$WHITE Verifying for listening ports.\n$YELLOW"
+
+netstat -tulpn | grep LISTEN
 
 printf "$BGREEN[*] Done."
