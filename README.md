@@ -11,5 +11,4 @@ Features
 >
 >Find common malicious files
 
-![image](https://github.com/esmeraldino-lk/Simple-malicious-verification/assets/133903212/01392636-efab-4c99-ad45-1618e06dadaf)
-
+![image](https://github.com/esmeraldino-lk/Simple-malicious-verification/assets/133903212/2494b2dd-abc4-4902-a460-3507eba68e27)
