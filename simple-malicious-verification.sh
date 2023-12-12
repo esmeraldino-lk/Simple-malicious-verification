@@ -85,7 +85,7 @@ printf "$YELLOW[*]$WHITE Search for common privillege scalation commands in $YEL
 for i in $BashHistory
 do
         printf "$YELLOW"
-        cat $BashHistory | grep -E 'pwned|crackmapexec|nmap|fscan|rootkit|heroin|trojan|nc -lvnp|nc -lnvp|worm|python|ruby|sudo su -l|whoami|wget|whoami|kit|upon|uponkit|dbus-send|sudo -u#-1 /bin/bash|find / -perm -u=s -type f 2>/dev/null|WafW00f|ssh|hydra' | sort -u
+        cat $i | grep -E 'pwned|crackmapexec|nmap|fscan|rootkit|heroin|trojan|nc -lvnp|nc -lnvp|worm|python|ruby|sudo su -l|whoami|wget|whoami|kit|upon|uponkit|dbus-send|sudo -u#-1 /bin/bash|find / -perm -u=s -type f 2>/dev/null|WafW00f|ssh|hydra' | sort -u
         printf "$WHITE[!] $i $BGREEN CHECKED\n$WHITE"
 done
 
