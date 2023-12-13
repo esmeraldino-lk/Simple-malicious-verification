@@ -94,9 +94,10 @@ done
 
 printf "$YELLOW[*]$WHITE Search for suspect files.\n$YELLOW"
 
-find / -name "linpeas" -o -name "linenum" -o -name "winpeas" 2>/dev/null
-find / -name "uponkit" -o -name "upon" -o -name "rootkit" 2>/dev/null
-find / -name "pwned" -o -name "hacker" -o -name "hacked" 2>/dev/null
+sudo find / -name "linpeas" -o -name "linenum" -o -name "winpeas" 2>/dev/null
+sudo find / -name "uponkit" -o -name "upon" -o -name "rootkit" 2>/dev/null
+sudo find / -name "pwned" -o -name "hacker" -o -name "hacked" 2>/dev/null
+sudo find / -name "enum" -o -name "payload" -o -name "trojan" -o -name "exploit "2>/dev/null
 
 
 printf "$YELLOW[*]$WHITE Verifying for listening ports.\n$YELLOW"
