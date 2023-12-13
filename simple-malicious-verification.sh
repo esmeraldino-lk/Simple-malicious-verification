@@ -101,10 +101,7 @@ sudo find / -name "enum" -o -name "payload" -o -name "trojan" -o -name "exploit"
 
 printf "$YELLOW[*]$WHITE Search for suspect strings.\n$YELLOW"
 
-sudo grep -Ril "gs-bus" / 2>/dev/null
-sudo grep -Ril "ncrack" / 2>/dev/null
-sudo grep -Ril "polkit" / 2>/dev/null
-sudo grep -Ril "pwned" / 2>/dev/null
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" / 2>/dev/null
 
 printf "$YELLOW[*]$WHITE Verifying for listening ports.\n$YELLOW"
 
