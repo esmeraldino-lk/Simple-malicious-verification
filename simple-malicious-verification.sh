@@ -99,9 +99,24 @@ sudo find / -name "uponkit" -o -name "upon" -o -name "rootkit"
 sudo find / -name "pwned" -o -name "hacker" -o -name "hacked" -o -name "pkexec" -o -name "ncrack" -o -name "gs-bus" -o -name "socket"
 sudo find / -name "enum" -o -name "payload" -o -name "trojan" -o -name "exploit" -o -name "shell" -o -name "liferay"
 
-printf "$YELLOW[*]$WHITE Search for suspect strings.\n$YELLOW"
+printf "$YELLOW[*]$WHITE Searching for suspect strings.\n$YELLOW"
 
-sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" / 2>/dev/null
+printf "$YELLOW[*]$WHITE Searching in /home\n$YELLOW"
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" /home 2>/dev/null | grep -v .class
+printf "$YELLOW[*]$WHITE Searching in /bin\n$YELLOW"
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" /bin 2>/dev/null | grep -v .class
+printf "$YELLOW[*]$WHITE Searching in /sbin\n$YELLOW"
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" /sbin 2>/dev/null | grep -v .class
+printf "$YELLOW[*]$WHITE Searching in /root\n$YELLOW"
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" /root 2>/dev/null | grep -v .class
+printf "$YELLOW[*]$WHITE Searching in /var/log\n$YELLOW"
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" /var/log 2>/dev/null | grep -v .class
+printf "$YELLOW[*]$WHITE Searching in /opt\n$YELLOW"
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" /opt 2>/dev/null | grep -v .class
+printf "$YELLOW[*]$WHITE Searching in /tmp\n$YELLOW"
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" /tmp 2>/dev/null | grep -v .class
+printf "$YELLOW[*]$WHITE Searching in /usr/bin\n$YELLOW"
+sudo grep -Ril -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum|linpeas" /usr/bin 2>/dev/null | grep -v .class
 
 printf "$YELLOW[*]$WHITE Verifying for listening ports.\n$YELLOW"
 
