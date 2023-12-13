@@ -104,4 +104,6 @@ printf "$YELLOW[*]$WHITE Verifying for listening ports.\n$YELLOW"
 
 netstat -tulpn | grep LISTEN
 
+rm ./verify.sh
+
 printf "$BGREEN[*] Done."
