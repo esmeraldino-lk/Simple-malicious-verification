@@ -106,14 +106,22 @@ sudo find / -name "enum" -o -name "payload" -o -name "trojan" -o -name "exploit"
 printf "$YELLOW[*]$WHITE Searching for suspect strings.\n$YELLOW"
 
 toSearch="gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas"
-declare -a pathSearch=("/bin" "/sbin" "/root" "/var/log" "/opt" "/tmp" "/usr/bin")
+declare -a pathSearch=("/bin" "/sbin" "/root" "/var/log" "/opt" "/tmp" "/usr/bin" "/home")
 
 for a in ${pathSearch[@]}
 do
         printf "$YELLOW[*]$WHITE Searching in $a \n$YELLOW"
-        sudo grep -Ril -E "$toSearch" $a 2>/dev/null | grep -v .class
+        fileout=sudo grep -Ril -E "$toSearch" $a 2>/dev/null | grep -v .class
+        echo $fileout >> outputVerify.txt
         printf "$WHITE[!] $a $BGREEN CHECKED\n$WHITE"
 done
+
+###FOR VERIFY FILE BY FILE ->
+###
+###
+#while IFS= read -r line; do;echo "=>$line";cat $line | grep -E -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas";sleep 2;done < outputVerify.txt
+###
+###
 
 ### LISTENING PORTS
 
