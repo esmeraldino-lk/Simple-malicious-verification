@@ -111,8 +111,7 @@ declare -a pathSearch=("/bin" "/sbin" "/root" "/var/log" "/opt" "/tmp" "/usr/bin
 for a in ${pathSearch[@]}
 do
         printf "$YELLOW[*]$WHITE Searching in $a \n$YELLOW"
-        fileout=sudo grep -Ril -E "$toSearch" $a 2>/dev/null | grep -v .class
-        echo $fileout >> outputVerify.txt
+        fileout=sudo grep -Ril -E "$toSearch" $a 2>/dev/null | grep -v .class | tee -a outuputVerify.txt
         printf "$WHITE[!] $a $BGREEN CHECKED\n$WHITE"
 done
 
