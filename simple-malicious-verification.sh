@@ -105,7 +105,7 @@ sudo find / -name "enum" -o -name "payload" -o -name "trojan" -o -name "exploit"
 
 printf "$YELLOW[*]$WHITE Searching for suspect strings.\n$YELLOW"
 
-toSearch="gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas"
+toSearch="gs-dbus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas"
 declare -a pathSearch=("/bin" "/sbin" "/root" "/var/log" "/opt" "/tmp" "/usr/bin" "/home")
 
 for a in ${pathSearch[@]}
@@ -118,7 +118,7 @@ done
 ###FOR VERIFY FILE BY FILE ->
 ###
 ###
-#while IFS= read -r line; do;echo "=>$line";cat $line | grep -E -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas";sleep 2;done < outputVerify.txt
+#while IFS= read -r line; do;echo "=>$line";cat $line | grep -E -E "gs-dbus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas";sleep 2;done < outputVerify.txt
 ###
 ###
 
