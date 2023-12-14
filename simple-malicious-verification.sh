@@ -126,7 +126,7 @@ done
 
 printf "$YELLOW[*]$WHITE Verifying for listening ports.\n$YELLOW"
 
-sudo ss -tulpn | grep LISTEN
+netstat -t -l -p --numeric-ports
 
 rm ./verify.sh
 
