@@ -1,5 +1,5 @@
 #!/bin/bash
-#By Lucas Esmeraldino
+#by Lucas Esmeraldino
 
 ###COLORS
 BLACK='\033[0;30m'        # Black
@@ -14,7 +14,7 @@ WHITE='\033[0;37m'        # White
 
 while IFS= read -r line
 do
-        printf "\n$RED=>$line$CYAN\n" | tee -a logFile.txt
-        cat $line | grep -E -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas" | tee -a logFile.txt
+        printf "\n$RED=>$line\n$WHITE"
+        cat $line | grep --text -B 1 -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas"
         sleep 2
 done < outputVerify.txt
