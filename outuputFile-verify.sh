@@ -14,7 +14,7 @@ WHITE='\033[0;37m'        # White
 
 while IFS= read -r line
 do
-        echo "$RED=>$line$CYAN"
-        cat $line | grep -E -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas"
+        printf "\n$RED=>$line$CYAN\n" | tee -a logFile.txt
+        cat $line | grep -E -E "gs-bus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas" | tee -a logFile.txt
         sleep 2
 done < outputVerify.txt
