@@ -25,12 +25,6 @@ BWHITE='\033[1;37m'       # White
 
 ### IN BASH HISTORY
 
-BashHistory=$(sudo find /bin -name ".bash_history" 2>/dev/null)
-BashHistory=$((BashHistory + sudo find /usr -name ".bash_history" 2>/dev/null))
-BashHistory=$((BashHistory + sudo find /sbin -name ".bash_history" 2>/dev/null))
-BashHistory=$((BashHistory + sudo find /opt -name ".bash_history" 2>/dev/null))
-BashHistory=$((BashHistory + sudo find /tmp -name ".bash_history" 2>/dev/null))
-BashHistory=$((BashHistory + sudo find /var -name ".bash_history" 2>/dev/null))
 BashHistory=$((BashHistory + sudo find /home -name ".bash_history" 2>/dev/null))
 
 printf "$YELLOW[*]$WHITE Search for common privillege scalation commands in $YELLOWbash history.\n$WHITE"
