@@ -94,10 +94,7 @@ done
 
 printf "$YELLOW[*]$WHITE Search for suspect files.\n$YELLOW"
 
-sudo find / -name "linpeas" -o -name "linenum" -o -name "winpeas"
-sudo find / -name "uponkit" -o -name "upon" -o -name "rootkit"
-sudo find / -name "pwned" -o -name "hacker" -o -name "hacked" -o -name "pkexec" -o -name "ncrack" -o -name "gs-bus" -o -name "socket"
-sudo find / -name "enum" -o -name "payload" -o -name "trojan" -o -name "exploit" -o -name "shell" -o -name "liferay"
+sudo find / -name "pwned" -o -name "hacker" -o -name "hacked" -o -name "pkexec" -o -name "ncrack" -o -name "gs-bus" -o -name "socket" -o -name "enum" -o -name "payload" -o -name "trojan" -o -name "exploit" -o -name "shell" -o -name "liferay" -o -name "uponkit" -o -name "upon" -o -name "rootkit" -o -name "linpeas" -o -name "linenum" -o -name "winpeas"
 
 
 ### SEARCH FOR SUSPECT STRING IN FILES
