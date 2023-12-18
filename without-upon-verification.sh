@@ -69,13 +69,6 @@ do
         printf "$WHITE[!] $a $BGREEN CHECKED\n$WHITE"
 done
 
-###FOR VERIFY FILE BY FILE ->
-###
-###
-#while IFS= read -r line; do;echo "=>$line";cat $line | grep -E -E "gs-dbus|ncrack|polkit|pwned|hacked|uponkit|linenum.sh|linpeas";sleep 2;done < outputVerify.txt
-###
-###
-
 ### LISTENING PORTS
 
 printf "$YELLOW[*]$WHITE Verifying for listening ports.\n$YELLOW"
@@ -84,4 +77,20 @@ netstat -t -l -p --numeric-ports
 
 rm ./verify.sh
 
+### VERIFY FOR 777 FILES
+
+printf "$YELLOW[*]$WHITE Verifying for 777 permission files.\n$YELLOW"
+
+find /home -perm 777 -type f
+find /usr -perm 777 -type f
+find /tmp -perm 777 -type f
+find /var -perm 777 -type f
+
+### VERIFY SUDO -L
+
+printf "$YELLOW[*]$WHITE Verifying sudo -l.\n$YELLOW"
+
+sudo -l 
+
+### DONE
 printf "$BGREEN[*] Done.\n"
