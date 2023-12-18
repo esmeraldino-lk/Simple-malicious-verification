@@ -75,8 +75,6 @@ printf "$YELLOW[*]$WHITE Verifying for listening ports.\n$YELLOW"
 
 netstat -t -l -p --numeric-ports
 
-rm ./verify.sh
-
 ### VERIFY FOR 777 FILES
 
 printf "$YELLOW[*]$WHITE Verifying for 777 permission files.\n$YELLOW"
